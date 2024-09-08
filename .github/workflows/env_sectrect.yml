@@ -1,0 +1,20 @@
+name: Environment Secret & Environment Variable
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ENVIRONMENT: development
+jobs:
+  build:
+    env:
+      MANGODB_DATABASE_NAME: "mydatabase"
+      MANGODB_USERNAME: "myusername"
+      # MANGODB_PASSWORD: ${{ secrets.MANGODB_PASSWORD }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set Environment Variables
+        run: echo $MANGODB_DATABASE_NAME $MANGODB_USERNAME $MANGODB_PASSWORD
