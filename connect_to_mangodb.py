@@ -17,10 +17,10 @@ print(f"Password: {password}")
 # Construct the MongoDB connection string
 # connection_string = mongodb+srv://amishkumar562:<db_password>@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-connection_string = "mongodb+srv//amishkumar562:UBzQEDVtfye9FhIb@"+host+"/?retryWrites=true&w=majority&appName=Cluster0"
-print(f"Connection string: {connection_string}")
+# connection_string = 'mongodb+srv//amishkumar562:UBzQEDVtfye9FhIb@'+host+'/?retryWrites=true&w=majority&appName=Cluster0'
+# print(f"Connection string: {connection_string}")
 # Create a MongoClient object
-client = MongoClient(connection_string)
+client = MongoClient('mongodb+srv://amishkumar562:UBzQEDVtfye9FhIb@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 print("Connected to MongoDB!")
 
 # if database is not present then it will create a new database
