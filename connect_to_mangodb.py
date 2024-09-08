@@ -17,10 +17,10 @@ print(f"Password: {password}")
 # Construct the MongoDB connection string
 # connection_string = mongodb+srv://amishkumar562:<db_password>@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-# connection_string = 'mongodb+srv//amishkumar562:UBzQEDVtfye9FhIb@'+host+'/?retryWrites=true&w=majority&appName=Cluster0'
+connection_string = f'mongodb+srv//amishkumar562:UBzQEDVtfye9FhIb@{host}/?retryWrites=true&w=majority&appName=Cluster0'
 # print(f"Connection string: {connection_string}")
 # Create a MongoClient object
-client = MongoClient('mongodb+srv://amishkumar562:UBzQEDVtfye9FhIb@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+client = MongoClient(connection_string)
 print("Connected to MongoDB!")
 
 # if database is not present then it will create a new database
@@ -35,9 +35,9 @@ print("Accessed collection:", collection)
 
 # Example: Insert a document into the collection
 document = {
-    "name": "Jane Doe",
-    "email": "janedoe@example.com",
-    "age": 25
+    "name": "amish Kumar",
+    "email": "amitest@test.com",
+    "age": 45
 }
 result = collection.insert_one(document)
 print("Document inserted with ID:", result.inserted_id)
