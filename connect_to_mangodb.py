@@ -17,10 +17,12 @@ print(f"Password: {password}")
 # Construct the MongoDB connection string
 # connection_string = mongodb+srv://amishkumar562:<db_password>@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
-connection_string = f"mongodb://{username}:{password}@{host}:{port}/{database_name}"
+connection_string = f"mongodb://{username}:{password}@{host}/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Create a MongoClient object
 client = MongoClient(connection_string)
+
+# if database is not present then it will create a new database
 
 # Access the specific database
 db = client[database_name]
