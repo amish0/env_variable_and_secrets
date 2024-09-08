@@ -6,19 +6,19 @@ on:
 
 env:
   ENVIRONMENT: development
-  DATABASE_NAME: mydatabase
+  MONGODB_DATABASE: mydatabase
 jobs:
   build:
     env:
       MANGODB_CLUSTER_ADDRESS: "cluster0.vstwl.mongodb.net"
-      PORT: 3000
-      # MANGODB_USERNAME: "myusername"
-      # MANGODB_PASSWORD: ${{ secrets.MANGODB_PASSWORD }}
+      MONGODB_PORT: 3000
+      MANGODB_USERNAME: ${{ secrets.MANGODB_USERNAME }}
+      MANGODB_PASSWORD: ${{ secrets.MANGODB_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Display Environment Variables
-        run: echo $DATABASE_NAME, $ENVIRONMENT, $MANGODB_CLUSTER_ADDRESS
+        run: echo $DATABASE_NAME, $ENVIRONMENT, $MANGODB_CLUSTER_ADDRESS, $MONGODB_PORT, $MANGODB_USERNAME, $MANGODB_PASSWORD
       - name: Display Environment Variables
         run: echo ${{ env.DATABASE_NAME }}, ${{ env.ENVIRONMENT }}, ${{ env.MANGODB_CLUSTER_ADDRESS }}
