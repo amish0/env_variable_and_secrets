@@ -2,8 +2,8 @@ import os
 from pymongo import MongoClient
 
 # Get MongoDB credentials from environment variables
-username = os.getenv('MONGODB_USERNAME')
-password = os.getenv('MONGODB_PASSWORD')
+username = os.getenv('MANGODB_USERNAME')
+password = os.getenv('MANGODB_PASSWORD')
 host = os.getenv('MANGODB_CLUSTER_ADDRESS', 'localhost')  # Default to localhost if not set
 port = os.getenv('MONGODB_PORT', '3000')  # Default MongoDB port
 database_name = os.getenv('MONGODB_DATABASE')
