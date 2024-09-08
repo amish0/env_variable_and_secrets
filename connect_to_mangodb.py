@@ -34,6 +34,10 @@ print("Accessed database:", db)
 collection = db['mycollection']
 print("Accessed collection:", collection)
 
+# display all data in the table
+print("All data in the table:")
+for x in collection.find():
+    print(x)
 # Example: Insert a document into the collection
 document = {
     "name": "amish Kumar",
