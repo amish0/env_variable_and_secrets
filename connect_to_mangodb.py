@@ -15,6 +15,8 @@ print(f"Password: {password}")
 
 
 # Construct the MongoDB connection string
+# connection_string = mongodb+srv://amishkumar562:<db_password>@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
 connection_string = f"mongodb://{username}:{password}@{host}:{port}/{database_name}"
 
 # Create a MongoClient object
@@ -40,4 +42,13 @@ user = collection.find_one({"name": "Jane Doe"})
 print("Found document:", user)
 
 # Close the connection (optional)
+
+# display all data in the table
+print("All data in the table:")
+for x in collection.find():
+    print(x)
+
+# display list of tables in the database
+print("List of tables in the database:")
+print(db.list_collection_names())
 client.close()
