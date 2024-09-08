@@ -12,8 +12,8 @@ jobs:
     env:
       MANGODB_CLUSTER_ADDRESS: "cluster0.vstwl.mongodb.net"
       MONGODB_PORT: 3000
-      MANGODB_USERNAME: ${{ secrets.MANGODB_USERNAME }}
-      MANGODB_PASSWORD: ${{ secrets.MANGODB_PASSWORD }}
+      MANGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MANGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
