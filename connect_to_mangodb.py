@@ -18,17 +18,20 @@ print(f"Password: {password}")
 # connection_string = mongodb+srv://amishkumar562:<db_password>@cluster0.vstwl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 connection_string = f"mongodb://{username}:{password}@{host}/?retryWrites=true&w=majority&appName=Cluster0"
-
+print(f"Connection string: {connection_string}")
 # Create a MongoClient object
 client = MongoClient(connection_string)
+print("Connected to MongoDB!")
 
 # if database is not present then it will create a new database
 
 # Access the specific database
 db = client[database_name]
+print("Accessed database:", db)
 
 # Access a specific collection
 collection = db['mycollection']
+print("Accessed collection:", collection)
 
 # Example: Insert a document into the collection
 document = {
